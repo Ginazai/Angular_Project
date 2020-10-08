@@ -33,20 +33,17 @@
           return msg;
         }
       }
-      if (pieces.length == 0 && pieces == []) {
-        msg = "Please enter data first";
-      } else {
-          if (pieces.length <= 3) {
+      if (pieces.length <= 3) {
             msg = "Enjoy !";
             //angular style. Search in the html for "ng-style", it takes this as
             //a javascript object literal that transform in a CSS style.
           $scope.myStyle ={'color': 'green'};
-        }
+        } else {
           if (pieces.length > 3) {
             msg = "Too much !";
-          $scope.myStyle = {'color': 'red'};
+            $scope.myStyle = {'color': 'red'};
+          }
         }
-      }
       console.log(pieces);
       return msg;
     }
