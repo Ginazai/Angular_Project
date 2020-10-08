@@ -22,12 +22,20 @@
       for (var i = 0; i < pieces.length; i++) {
         if (!pieces[i].match(reg)) {pieces.splice(i, 1);}
       }
-      if (pieces.length <= 3) {msg = "Enjoy !";
-      $scope.myStyle ={'color': 'green'};}
-      else{if (pieces.length > 3) {msg = "Too much !";
-      $scope.myStyle = {'color': 'red'};}}
+      if (pieces.length == 0) {
+        msg = "Please enter data first";
+      } else {
+          if (pieces.length <= 3) {
+            msg = "Enjoy !";
+          $scope.myStyle ={'color': 'green'};
+        }
+          if (pieces.length > 3) {
+            msg = "Too much !";
+          $scope.myStyle = {'color': 'red'};
+        }
+      }
       return msg;
     }
-
+    
   }
 })();
