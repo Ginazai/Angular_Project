@@ -15,12 +15,21 @@
     };
 
     function getFood(inpt) {
+      //regular expression that means "any latin alphabet character 1 or more
+      //times"
       var reg = /\w+/;
-      var spc = /\s+/;
       var pieces = inpt.split(",");
       var msg= "";
+      //content check, if it's not a character delete it and return "empty value"
       for (var i = 0; i < pieces.length; i++) {
-        if (!pieces[i].match(reg)) {pieces.splice(i, 1);}
+        if (!pieces[i].match(reg)) {
+          pieces.splice(i);
+          msg = ("Empty value found at: " + (i+1) + ' (delete to continue adding)');
+          $scope.myStyle = {'color': 'red'};
+          //you can check that in fact, is omitting any empty value
+          console.log(pieces);
+          return msg;
+        }
       }
       if (pieces.length == 0) {
         msg = "Please enter data first";
@@ -34,8 +43,9 @@
           $scope.myStyle = {'color': 'red'};
         }
       }
+      console.log(pieces);
       return msg;
     }
-    
+
   }
 })();
