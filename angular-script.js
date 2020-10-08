@@ -20,6 +20,8 @@
       var reg = /\w+/;
       var pieces = inpt.split(",");
       var msg= "";
+      //check if there's any input
+      if($scope.input == "" ||   $scope.input == " "){ msg = "Please enter data first"; return msg;}
       //content check, if it's not a character delete it and return "empty value"
       for (var i = 0; i < pieces.length; i++) {
         if (!pieces[i].match(reg)) {
@@ -31,7 +33,7 @@
           return msg;
         }
       }
-      if (pieces.length == 0) {
+      if (pieces.length == 0 && pieces == []) {
         msg = "Please enter data first";
       } else {
           if (pieces.length <= 3) {
