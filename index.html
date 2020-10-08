@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="food_list" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular</title>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular/angular.min.js.map"></script>
+    <script type="text/javascript" src="angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="angular/angular-route.min.js.map"></script>
+    <script type="text/javascript" src="angular-script.js"></script>
+  </head>
+  <body ng-controller="list_controller">
+    <h1 style="text-align: center;">First Angular Assignment !</h1>
+    <div>
+    <label for="usr_field">List things you eat for lunch !</label><br>
+    <input ng-model="input" type="text" name="usr_field" value="">
+    <div ng-style="myStyle">{{msg}}</div>
+    <br><button ng-click="getValue()" type="button" name="button">Check !</button>
+    </div>
+  </body>
+</html>
