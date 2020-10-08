@@ -36,6 +36,8 @@
       } else {
           if (pieces.length <= 3) {
             msg = "Enjoy !";
+            //angular style. Search in the html for "ng-style", it takes this as
+            //a javascript object literal that transform in a CSS style.
           $scope.myStyle ={'color': 'green'};
         }
           if (pieces.length > 3) {
